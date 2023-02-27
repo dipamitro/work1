@@ -11,13 +11,16 @@ html{
 body{
     font-family: 'Merriweather', serif;
     text-rendering:optimizeLegibility;
-    line-height: ;
 }
 ul li{
     list-style-type: none;
 }
 h1{font-size: 3rem;
 color:#fff;}
+:focus{
+    outline:0 ;
+}
+
 h2{
     font-size: 4rem;
     text-transform: uppercase;
@@ -75,7 +78,7 @@ h4{
     padding: 15px 60px;
     border-radius: 3px;
     display: inline-block;
-    margin-top:45px ;
+    margin-top:30px ;
     font-size: 1.6rem;
 }
 
@@ -91,15 +94,18 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 85vh;
+    height: 70vh;
     position: relative;
 
 }
 .logo{
     height: 3.5rem;
     width: auto;
-    margin-top: 3.5px;
+    margin-top: 2.2rem;
     float: left;
+}
+.hero-text-box{
+    width: 114rem;
 }
 
 /* =================Main NAv========================== */
@@ -121,7 +127,7 @@ header{
     color:#fff;
     text-decoration: none;
     text-transform: uppercase;
-    background: rgba(100,58 121,0);
+    background: rgba(255, 255, 255, 0);
     padding: .6rem 1.6rem;
     border-radius: .3rem;
     display: inline-block;
@@ -130,15 +136,16 @@ header{
     
 }
 .main-nav li.active a:link
-.main-nav li:hover a:visited{
-    background: rgba(100,58,121,1);
+.main-nav li:active a:visited{
+    border-radius: .3rem;
+    background: rgb(236, 234, 237);
 }
-.main-nav li:hover a:link
+.main-nav li:hover a:link,
 .main-nav li:hover a:visited{
-    background: rgba(100,58,121,1);
+    background: rgb(239, 206, 246);
 }
-.active{
-    background: rgba(100,58,121,1);
+.main-nav li.active{
+    background: rgb(177, 112, 210);
     border-radius: 3px;
 }
 
@@ -148,20 +155,24 @@ header{
     top:0;
     left:0;
     width: 100%;
-    background: #87509c;
+    background: rgba(135, 80, 156, 0.9);
+    padding: 1 rem 0;
+    box-shadow:0.3 rem .5rem
+    rgba(255,255,255,0.9);
+     z-index:9999;
 }
 .sticky logo{
-    margin-top: .2rem;
+    margin-top: 0;
 }
-.sticky .main-nav{margin-top: 0;}
+.sticky .main-nav{margin-top: .2rem;}
 .hero-text-box{
     position: absolute;
     top:50%;
-    left:58%;
+    left:50%;
     transform: translate(-50%,-50%);
     text-align: center;
     font-size: 3px;
-    padding-right: 200px;
+   
 
 }
 .btn-hero:link,
@@ -252,7 +263,7 @@ header{
     background: #bdd1df;
     width: 2rem;
     height:3rem;
-    border-radius: 50%;
+    border-radius:50%;
     display: inline-block;
     font-size:2rem;
     padding: 1rem;
@@ -262,6 +273,10 @@ header{
 
     background: #ebe4ef;
     transform: rotate(360deg);
+}
+
+.social-link, .fa, .fab, .fal, .far, .fas{
+    color: #fff;
 }
 
 
@@ -484,3 +499,13 @@ svg.ui-ux circle{
 .btn-submit :hover{
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+

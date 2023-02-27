@@ -89,13 +89,7 @@
         </div>
     </div>
 
-
-  
-    
-    
     <!-- ====================END Start Services=========================== -->
-
-
     <!-- ====================start Start Section=========================== -->
     <div class="team-section clearfix" id="team">
         <div class="row">
@@ -227,10 +221,10 @@
         </div>
         <div class="row">
             <div class="protfolio-filter">
-                <button type="button" data-filter="all">all</button>
-                <button type="button" data-filter=".web">Web</button>
-                <button type="button" data-filter=".app">App</button>
-                <button type="button" data-filter=".icons">icons</button>
+                <button class="allbtn" type="button"  onclick="allsection()">all</button>
+                <button type="button"  onclick="websection()">Web</button>
+                <button type="button"  onclick="appsection()">App</button>
+                <button type="button"  onclick="iconssection()">icons</button>
             </div>
         </div>
         <div class="row container">
@@ -254,9 +248,6 @@
         <div class="row"></div>
         <a href="#"class="btn btn-load-more">Load more project</a>
     </section>
-
-
-
     <!-- ====================END Protfolio Section========================= -->
     <!-- ====================start testimonial Section===================== -->
             <section class="testimonial" id="testimonial">
@@ -317,23 +308,6 @@
                     </div>
                 </div>
             </section> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- ====================END testimonial Section========================= -->
     <!-- ====================END Contact Section========================= -->
     <section class="contact" id="contact">
@@ -364,30 +338,29 @@
         </div>
     </section>
 
-
-
-
     
     <!-- ====================END Contact Section========================= -->
+    <!-- ====================Start footar Section========================= -->
+    <!-- ul>li*7>a[href="#"]{face} -->
+
+    <footer class="footer-section">
+        <div class="row">
+            <ul>
+                <li><a href="#">facebook</a></li>
+                <li><a href="#">twitter</a></li>
+                <li><a href="#">Google+</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Bahance</a></li>
+                <li><a href="#">Dribble</a></li>
+                <li><a href="#">GitHub</a></li>
+            </ul>
+        </div>
 
 
-    <!-- ====================END HEADER=========================== -->
-    
-  
-    
-
-
-
-
-
-
-
-
-
-        <!-- <========js scripts===========> -->
-
-
-        
+    </footer>
+    <!-- ====================END footar Section========================= -->
+    <!-- ====================END=========================== -->
+    <!-- <========js scripts===========> -->   
      <script src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.0/model-viewer.min.js"></script>
     <script src="vendors/js/html5shiv.min.js"></script>
     <script src="vendors/js/respond.min.js"></script>
@@ -396,5 +369,50 @@
     <script src="vendors\js\animated-circle.js"></script>
     <script src="vendors/js/mixitup.min.js"></script>
     <script src="resources/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    
+    <script>
+        function allsection(){
+            $(".mix").show(300);
+        }
+    
+        function websection(){  
+            $(".mix").hide(300);
+            $(".web").show(100);
+        }
+        function appsection(){
+            $(".mix").hide(300);
+            $(".apps").show(100);
+        }
+        function iconssection(){
+            $(".mix").hide(300);
+            $(".icons").show(100);
+        }
+        $('svg.radial-progress').each(function( index, value ) { 
+      $(this).find($('circle.complete')).removeAttr( 'style' );
+    });
+    
+    $(window).scroll(function(){
+      $('svg.radial-progress').each(function( index, value ) { 
+        // If svg.radial-progress is approximately 25% vertically into the window when scrolling from the top or the bottom
+        if ( 
+            $(window).scrollTop() > $(this).offset().top - ($(window).height() * 0.75) &&
+            $(window).scrollTop() < $(this).offset().top + $(this).height() - ($(window).height() * 0.25)
+        ) {
+            // Get percentage of progress
+            percent = $(value).data('percentage');
+            // Get radius of the svg's circle.complete
+            radius = $(this).find($('circle.complete')).attr('r');
+            // Get circumference (2πr)
+            circumference = 2 * Math.PI * radius;
+            // Get stroke-dashoffset value based on the percentage of the circumference
+            strokeDashOffset = circumference - ((percent * circumference) / 100);
+            // Transition progress for 1.25 seconds
+            $(this).find($('circle.complete')).animate({'stroke-dashoffset': strokeDashOffset}, 1250);
+        }
+      });
+    }).trigger('scroll');
+    
+    </script>
 </body>
 </html>

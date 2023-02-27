@@ -98,11 +98,21 @@ header{
     position: relative;
 
 }
+
+nav {
+    overflow: hidden;
+    background-color: #87509c;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  } 
+
 .logo{
     height: 3.5rem;
     width: auto;
-    margin-top: 2.2rem;
+    margin-top: 1.5rem;
     float: left;
+    margin-bottom: 1.5rem;
 }
 .hero-text-box{
     width: 114rem;
@@ -296,32 +306,30 @@ header{
     color:#3c4761
 }
 
-.skill-section .box{
-    margin-top: 4.5rem;
-}
-.skill-section h2::after{
-    background: #000000;
-}
-svg.redial-progress circle{
-    stroke-width: 5;
-}
-svg.redial-progress text{
-    fill:#3c4761;
-    font-size:.5rem
-   
-}
-svg.web-design circle{
-    stroke:#d20155;
-}
-svg.html-css circle{
-    stroke: #3134ed;
-}
-svg.graphic-design circle{
-    stroke: #7b0505;
-}
-svg.ui-ux circle{
-    stroke: #eb7d4b;
-}
+svg.radial-progress circle .radial-progress {
+    height: auto;
+    max-width: 200px;
+    padding: 1em;
+    transform: rotate(-90deg);
+    width: 100%;
+  }
+  
+  svg.radial-progress circle {
+    fill: rgba(0,0,0,0);
+    stroke: #fff;
+    stroke-dashoffset: 219.91148575129; 
+    stroke-width: 7.5;
+  }
+  
+  svg.radial-progress circle.incomplete { opacity: 0.25; }
+  
+  svg.radial-progress circle.complete { stroke-dasharray: 219.91148575129; }
+  
+  svg.radial-progress text {
+    fill: #fff;
+    text-anchor: middle;
+  }
+   svg.radial-progress circle { stroke: #a0310c; } 
 
 /* ==================protfolio================= */
 .portfolio-section{
@@ -499,6 +507,34 @@ svg.ui-ux circle{
 .btn-submit :hover{
     cursor: pointer;
 }
+
+/* ++++++++++++++++FOotar+++++++++++++++++++= */
+
+
+.footer-section{
+    background: #344b8e;
+    padding: 3rem 0;
+    text-align: center;
+    border-top: .1rem solid rgba(255, 255, 255, 0.3);
+}
+.footer-section li{
+    display: inline-block;
+    margin: 0 2 rem;
+    padding: 20px;
+    font-size: medium;
+
+}
+.footer-section li a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-style:2.4rem;
+}
+.footer-section :hover{
+    color: #30bae7;
+}
+
+
 
 
 
